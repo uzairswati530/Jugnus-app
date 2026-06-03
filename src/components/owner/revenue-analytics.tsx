@@ -23,10 +23,10 @@ export default function RevenueAnalytics({ period, onPeriodChange }: RevenueAnal
   const maxHourValue = Math.max(...hours.map(h => h.value));
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-4 md:p-6 space-y-6">
       <div className="flex items-center gap-2">
-        <BarChart3 size={24} className="text-[#C5A044]" />
-        <h2 className="text-2xl font-bold text-gray-900">Revenue Analytics</h2>
+        <BarChart3 size={20} className="text-[#C5A044]" />
+        <h2 className="text-lg md:text-2xl font-bold text-gray-900">Revenue Analytics</h2>
       </div>
 
       <div className="flex gap-2 p-1 bg-[#FAFAFA] rounded-lg border border-[rgba(197,160,68,0.3)] w-fit">

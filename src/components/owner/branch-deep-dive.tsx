@@ -24,8 +24,8 @@ export default function BranchDeepDive({ branchId, onBack }: BranchDeepDiveProps
   });
 
   return (
-    <div className="p-6 space-y-6">
-      <div className="flex items-center gap-4">
+    <div className="p-4 md:p-6 space-y-6">
+      <div className="flex flex-wrap items-center gap-3 md:gap-4">
         <button
           onClick={onBack}
           className="flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors"
@@ -33,18 +33,18 @@ export default function BranchDeepDive({ branchId, onBack }: BranchDeepDiveProps
           <ChevronLeft size={20} />
           Back
         </button>
-        <div className="flex items-center gap-3 ml-4">
-          <div className="w-12 h-12 rounded-lg bg-[rgba(197,160,68,0.1)] border border-[rgba(197,160,68,0.3)] flex items-center justify-center">
-            <MapPin size={20} className="text-[#C5A044]" />
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[rgba(197,160,68,0.1)] border border-[rgba(197,160,68,0.3)] flex items-center justify-center">
+            <MapPin size={18} className="text-[#C5A044]" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">{branch.name}</h2>
-            <p className="text-sm text-gray-500">{branch.phone}</p>
+            <h2 className="text-lg md:text-2xl font-bold text-gray-900">{branch.name}</h2>
+            <p className="text-xs md:text-sm text-gray-500">{branch.phone}</p>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-2 md:gap-4">
         {[
           { label: 'Queue Active', value: branch.activeQueue, color: 'text-amber-600' },
           { label: 'Bookings Today', value: branch.todayBookings, color: 'text-blue-600' },

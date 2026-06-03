@@ -143,7 +143,7 @@ export default function OwnerView() {
         </button>
       </div>
 
-      <div className="flex gap-1 p-1 bg-[#FAFAFA] rounded-lg border border-[rgba(197,160,68,0.3)] overflow-x-auto">
+      <div className="flex gap-1 p-1 bg-[#FAFAFA] rounded-lg border border-[rgba(197,160,68,0.3)] overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
         {NAV_ITEMS.map(item => (
           <button
             key={item.id}
@@ -151,7 +151,7 @@ export default function OwnerView() {
               setTab(item.id);
               if (item.id !== 'branch') setSelectedBranchId(null);
             }}
-            className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all
+            className={`flex items-center gap-1.5 px-3 md:px-4 py-2 rounded-md text-xs md:text-sm font-medium whitespace-nowrap transition-all shrink-0
               ${tab === item.id && !selectedBranchId
                 ? 'bg-[#C5A044] text-white'
                 : 'text-gray-500 hover:text-gray-900'
