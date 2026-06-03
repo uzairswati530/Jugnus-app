@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A044;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid rgba(197, 160, 68, 0.2);
+  border-radius: 12px;
+}
+
+.card-2 {
+  background: #FAFAFA;
+  border: 1px solid rgba(197, 160, 68, 0.15);
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: #C5A044;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #D4AF37;
+}
+
+.btn-ghost {
+  background: rgba(197, 160, 68, 0.1);
+  color: #111;
+  border: 1px solid rgba(197, 160, 68, 0.3);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(197, 160, 68, 0.2);
+}
+
+.badge-confirmed {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-inprogress {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-done {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-waiting {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6B7280;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.input-dark {
+  background: #FAFAFA;
+  border: 1px solid rgba(197, 160, 68, 0.3);
+  color: #111;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-dark:focus {
+  border-color: #C5A044;
+  box-shadow: 0 0 0 2px rgba(197, 160, 68, 0.1);
+}
+
+.input-dark::placeholder {
+  color: #9CA3AF;
+}
+
+select.input-dark option {
+  background: #FAFAFA;
+  color: #111;
+}
+
+.step-active {
+  background: #C5A044;
+  color: white;
+}
+
+.step-done {
+  background: rgba(34, 197, 94, 0.8);
+  color: white;
+}
+
+.step-pending {
+  background: #F5F5F5;
+  color: #9CA3AF;
+  border: 1px solid #E5E7EB;
+}
+
+.slot-available {
+  background: rgba(197, 160, 68, 0.08);
+  border: 1px solid rgba(197, 160, 68, 0.3);
+  color: #111;
+  transition: all 0.15s ease;
+}
+
+.slot-available:hover {
+  background: #C5A044;
+  border-color: #C5A044;
+  color: white;
+}
+
+.slot-selected {
+  background: #C5A044;
+  border: 1px solid #C5A044;
+  color: white;
+}
+
+.slot-booked {
+  background: #F5F5F5;
+  border: 1px solid #E5E7EB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* Stat card glow effect */
+.stat-value {
+  text-shadow: 0 0 20px rgba(197, 160, 68, 0.15);
+  transition: text-shadow 150ms ease;
+}
+
+.stat-value:hover {
+  text-shadow: 0 0 30px rgba(197, 160, 68, 0.25);
+}
+
+/* Table row hover effects */
+table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+table tbody tr:hover {
+  background-color: rgba(197, 160, 68, 0.05);
+}
+
+/* Button and card transitions */
+button,
+.card,
+.card-2,
+.btn-primary,
+.btn-ghost {
+  transition: all 150ms ease;
+}
+
+/* Sidebar active item styling */
+.sidebar-item.active {
+  border-left: 3px solid #C5A044;
+  background: rgba(197, 160, 68, 0.1);
+  padding-left: calc(1rem - 3px);
+}
+
+.sidebar-item {
+  transition: all 150ms ease;
+}
+
+/* Modal backdrop blur */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+}
+
+/* Header gradient underline */
+.header-underline {
+  height: 2px;
+  background: linear-gradient(to right, #C5A044, transparent);
+  opacity: 0.5;
+}
+
+/* Loading skeleton shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    #FAFAFA 25%,
+    #F5F5F5 50%,
+    #FAFAFA 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+/* Trend indicators */
+.trend-up::after {
+  content: '↑';
+  margin-left: 4px;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.trend-down::after {
+  content: '↓';
+  margin-left: 4px;
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Toast animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slideInUp 300ms ease-out;
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  color: #6B7280;
+  padding: 3rem 2rem;
+}
+
+.empty-state-icon {
+  color: #9CA3AF;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Price formatting with commas */
+.price-display {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Custom utility classes for the theme */
+.bg-surface {
+  background: #FAFAFA;
+}
+
+.bg-surface-2 {
+  background: #F5F5F5;
+}
+
+.text-primary {
+  color: #C5A044;
+}
+
+.bg-primary {
+  background-color: #C5A044;
+}
+
+.bg-primary-dim {
+  background-color: rgba(197, 160, 68, 0.1);
+}
+
+.border-primary {
+  border-color: #C5A044;
+}
+
+.border-primary-border {
+  border-color: rgba(197, 160, 68, 0.3);
+}
+
+.hover\:border-primary:hover {
+  border-color: #C5A044;
+}
+
+.hover\:border-primary\/50:hover {
+  border-color: rgba(197, 160, 68, 0.5);
+}
+
+.hover\:bg-primary\/5:hover {
+  background-color: rgba(197, 160, 68, 0.05);
+}
+
+.bg-primary\/20 {
+  background-color: rgba(197, 160, 68, 0.2);
+}
+
+.border-primary\/40 {
+  border-color: rgba(197, 160, 68, 0.4);
+}
+
+.text-primary-foreground {
+  color: white;
+}
+
+.bg-primary-foreground {
+  background-color: white;
+}

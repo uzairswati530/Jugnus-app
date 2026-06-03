@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b42f2f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d43535;
+}
+
+.card {
+  background: #111111;
+  border: 1px solid rgba(180, 47, 47, 0.3);
+  border-radius: 12px;
+}
+
+.card-2 {
+  background: #1a1a1a;
+  border: 1px solid rgba(180, 47, 47, 0.3);
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: #b42f2f;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #c93535;
+}
+
+.btn-ghost {
+  background: rgba(180, 47, 47, 0.15);
+  color: white;
+  border: 1px solid rgba(180, 47, 47, 0.3);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(180, 47, 47, 0.25);
+}
+
+.badge-confirmed {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.badge-inprogress {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-done {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.badge-waiting {
+  background: rgba(107, 114, 128, 0.2);
+  color: #9ca3af;
+  border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+.input-dark {
+  background: #1a1a1a;
+  border: 1px solid rgba(180, 47, 47, 0.3);
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-dark:focus {
+  border-color: #b42f2f;
+}
+
+.input-dark::placeholder {
+  color: #555;
+}
+
+select.input-dark option {
+  background: #1a1a1a;
+  color: white;
+}
+
+.step-active {
+  background: #b42f2f;
+  color: white;
+}
+
+.step-done {
+  background: rgba(34, 197, 94, 0.8);
+  color: white;
+}
+
+.step-pending {
+  background: #222222;
+  color: #555555;
+  border: 1px solid #333;
+}
+
+.slot-available {
+  background: rgba(180, 47, 47, 0.1);
+  border: 1px solid rgba(180, 47, 47, 0.3);
+  color: white;
+  transition: all 0.15s ease;
+}
+
+.slot-available:hover {
+  background: #b42f2f;
+  border-color: #b42f2f;
+}
+
+.slot-selected {
+  background: #b42f2f;
+  border: 1px solid #b42f2f;
+  color: white;
+}
+
+.slot-booked {
+  background: #111111;
+  border: 1px solid #222;
+  color: #444;
+  cursor: not-allowed;
+}
+
+/* UI Improvements */
+
+/* Stat card glow effect */
+.stat-value {
+  text-shadow: 0 0 20px rgba(180, 47, 47, 0.15);
+  transition: text-shadow 150ms ease;
+}
+
+.stat-value:hover {
+  text-shadow: 0 0 30px rgba(180, 47, 47, 0.25);
+}
+
+/* Table row hover effects */
+table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+table tbody tr:hover {
+  background-color: rgba(180, 47, 47, 0.05);
+}
+
+/* Button and card transitions */
+button,
+.card,
+.card-2,
+.btn-primary,
+.btn-ghost {
+  transition: all 150ms ease;
+}
+
+/* Sidebar active item styling */
+.sidebar-item.active {
+  border-left: 3px solid #b42f2f;
+  background: rgba(180, 47, 47, 0.1);
+  padding-left: calc(1rem - 3px);
+}
+
+.sidebar-item {
+  transition: all 150ms ease;
+}
+
+/* Modal backdrop blur */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+}
+
+/* Header gradient underline */
+.header-underline {
+  height: 2px;
+  background: linear-gradient(to right, #b42f2f, transparent);
+  opacity: 0.5;
+}
+
+/* Loading skeleton shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 25%,
+    #222 50%,
+    #1a1a1a 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 8px;
+}
+
+/* Trend indicators */
+.trend-up::after {
+  content: '↑';
+  margin-left: 4px;
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.trend-down::after {
+  content: '↓';
+  margin-left: 4px;
+  color: #f87171;
+  font-weight: bold;
+}
+
+/* Toast animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slideInUp 300ms ease-out;
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  color: #9ca3af;
+  padding: 3rem 2rem;
+}
+
+.empty-state-icon {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Price formatting with commas - ensure proper display */
+.price-display {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
